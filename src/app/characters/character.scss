@@ -1,0 +1,57 @@
+.characters{
+  width: 80%;
+  .header-characters{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5em 2em;
+    .titles{
+      display: flex;
+      align-items: center;
+      span{
+        font-weight: bold;
+      }
+      figure{
+        img{
+          height: 25px;
+        }
+      }
+    }
+  }
+}
+.body-characters{
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+.character{
+  background: white;
+  margin: 1em;
+  padding: .5em;
+  .aux-box {
+    position: relative;
+    min-height: 50vh;
+    .bx-1{
+      display: flex;
+      position: absolute;
+      top: -13%;
+      left: -5%;
+      figure{
+        img{
+          border-radius: 50%;
+        }
+      }
+      .info{
+        margin-left: 1em;
+        button{
+          background: #ee1e23;
+          color: white;
+        }
+      }
+    }
+  }
+  
+  .related{
+    padding: 1em;
+  }
+}
