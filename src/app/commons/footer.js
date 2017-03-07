@@ -1,3 +1,3 @@
 export const footerApp = {
-    templateUrl: 'app/commons/footer.html'
+  templateUrl: 'app/commons/footer.html'
 };
