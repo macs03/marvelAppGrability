@@ -1,22 +1,21 @@
-/* import angular from 'angular';
+import angular from 'angular';
 import 'angular-mocks';
 import {
-  header
+  headerApp
 } from './header';
 
 describe('header component', () => {
   beforeEach(() => {
     angular
-      .module('fountainHeader', ['app/header.html'])
-      .component('fountainHeader', header);
-    angular.mock.module('fountainHeader');
+      .module('headerApp', ['app/commons/header.html'])
+      .component('headerApp', headerApp);
+    angular.mock.module('headerApp');
   });
 
-  it('should render \'Fountain Generator\'', angular.mock.inject(($rootScope, $compile) => {
-    const element = $compile('<fountain-header></fountain-header>')($rootScope);
+  it('should render a form', angular.mock.inject(($rootScope, $compile) => {
+    const element = $compile('<header-app></header-app>')($rootScope);
     $rootScope.$digest();
-    const header = element.find('a');
-    expect(header.html().trim()).toEqual('Fountain Generator');
+    expect(element.find('form').length).toEqual(1);
   }));
 });
-*/
+

@@ -1,14 +1,14 @@
 import angular from 'angular';
 import 'angular-mocks';
 import {
-  footer
+  footerApp
 } from './footer';
 
 describe('footer component', () => {
   beforeEach(() => {
     angular
       .module('appFooter', ['app/commons/footer.html'])
-      .component('footerApp', footer);
+      .component('footerApp', footerApp);
     angular.mock.module('appFooter');
   });
 
@@ -19,3 +19,4 @@ describe('footer component', () => {
     expect(footer.html().trim()).toEqual('Grability 2017 - Todos los reservados');
   }));
 });
+
