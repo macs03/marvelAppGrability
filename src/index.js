@@ -6,6 +6,9 @@ import {
 import {
   charactersModule
 } from './app/characters/index';
+import {
+  favoritesModule
+} from './app/favorites/index';
 
 import 'angular-ui-router';
 import routesConfig from './routes';
@@ -17,6 +20,6 @@ import {
 import './index.scss';
 
 angular
-  .module('app', [commonsModule, charactersModule, 'ui.router'])
+  .module('app', [commonsModule, charactersModule, favoritesModule, 'ui.router'])
   .config(routesConfig)
   .component('app', main);

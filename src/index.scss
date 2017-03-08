@@ -1,5 +1,6 @@
 @import 'app/commons/commons';
 @import 'app/characters/character';
+@import 'app/favorites/favorite';
 
 html,
 body,
@@ -34,5 +35,6 @@ a {
 .main {
   flex: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
 }

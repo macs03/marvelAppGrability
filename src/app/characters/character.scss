@@ -1,5 +1,5 @@
 .characters{
-  width: 80%;
+  width: 80vw;
   .header-characters{
     display: flex;
     align-items: center;
@@ -30,7 +30,7 @@
   padding: .5em;
   .aux-box {
     position: relative;
-    min-height: 50vh;
+    min-height: 25vh;
     .bx-1{
       display: flex;
       position: absolute;
