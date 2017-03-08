@@ -1,0 +1,40 @@
+.detail-modal{
+  display: flex;
+  justify-content: space-between;
+  .description{
+    margin-left: 2em;
+  }
+}
+.modal-header{
+  border-bottom: none;
+}
+.modal-footer{
+  border-top: none;
+  padding: 0 1em !important;
+  .buy-btn{
+    margin: 0 !important;
+    border-radius: 0 !important;
+    background: #D4D4D4 !important;
+    border: #D4D4D4;
+    color: red;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+      margin-right: 1em;
+    }
+  }
+  .add-btn{
+    border-radius: 0 !important;
+    background: #ECECEC !important;
+    border: #ECECEC;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+      margin-right: 1em;
+    }
+  }
+}
