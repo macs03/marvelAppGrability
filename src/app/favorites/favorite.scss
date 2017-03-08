@@ -2,4 +2,41 @@
   background: #E6E6E6;
   min-height: 100vh;
   width: 20vw;
+  padding: .5em;
+  .header-fav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span{
+      font-weight: bold;
+      margin-left: 1em;
+    }
+    figure{
+      img{
+        height: 25px;
+      }
+    }
+  }
+  .body-fav{
+    padding: 1em;
+    .comic-box{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      .description{
+        text-align: center;
+        font-weight: bold;
+      }
+      .trash{
+        position: absolute;
+        top: -3%;
+        left: 78%;
+        img{
+          width: 25px;
+        }
+      }
+    }
+  }
 }
