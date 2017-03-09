@@ -1,17 +1,17 @@
 <header class="header">
-    <figure>
-        <img src="http://vignette3.wikia.nocookie.net/ironman/images/3/3e/Marvel_logo.png/revision/latest?cb=20130509080310&path-prefix=es"
-            alt="Marvel Logo">
-    </figure>
-    <form ng-submit="">
-        <div class="general-search">
-            <input type="text" placeholder="Search character">
-            <div class="search-box">
-                <input class="btn-sbm" type="submit">
-                <figure>
-                    <img src="../../assets/icons/search.png" alt="Search Glass">
-                </figure>
-            </div>
-        </div>
-    </form>
+  <figure>
+    <img src="http://vignette3.wikia.nocookie.net/ironman/images/3/3e/Marvel_logo.png/revision/latest?cb=20130509080310&path-prefix=es"
+      alt="Marvel Logo">
+  </figure>
+  <form ng-submit="$ctrl.sendQuery()">
+    <div class="general-search">
+      <input type="text" ng-model="$ctrl.query" placeholder="Search character">
+      <div class="search-box">
+        <input class="btn-sbm" type="submit">
+        <figure>
+          <img src="../../assets/icons/search.png" alt="Search Glass">
+        </figure>
+      </div>
+    </div>
+  </form>
 </header>

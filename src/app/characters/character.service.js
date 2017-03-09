@@ -1,5 +1,3 @@
-import angular from 'angular';
-
 class CharacterService {
   constructor($http, $q, $window, $rootScope) {
     this.$http = $http;
@@ -37,6 +35,28 @@ class CharacterService {
       this.$http({
         method: 'GET',
         url: `${config.api_url}characters?${config.ts}&${config.user_key}&${config.hash_key}&limit=10&offset=${page}`
+      })
+        .then(
+        data => {
+          defered.resolve(data);
+        },
+        err => {
+          defered.reject(err);
+        }
+        );
+    });
+
+    return promise;
+  }
+
+  getCharactersByName(page, query) {
+    const defered = this.$q.defer();
+    const promise = defered.promise;
+
+    this.getConfig().then(config => {
+      this.$http({
+        method: 'GET',
+        url: `${config.api_url}characters?${config.ts}&${config.user_key}&${config.hash_key}&limit=10&offset=${page}&nameStartsWith=${query}`
       })
         .then(
         data => {

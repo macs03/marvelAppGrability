@@ -1,12 +1,19 @@
 import angular from 'angular';
 
 class CharacterController {
-  constructor(CharacterService) {
+  constructor(CharacterService, $scope) {
     this.CharacterService = CharacterService;
 
     this.getCharacters();
     this.page = 0;
     this.flag = false;
+
+    const self = this;
+    function changeView(ev, query) {
+      console.log(query);
+      self.getCharactersByName(query);
+    }
+    $scope.$on('sendQuery', changeView);
   }
 
   getCharacters() {
@@ -19,6 +26,18 @@ class CharacterController {
         console.log(err);
       });
   }
+
+  getCharactersByName(query) {
+    this.CharacterService.getCharactersByName(this.page, query)
+      .then(data => {
+        console.log(data.data.data.results);
+        this.characterData = data.data.data.results;
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
 
   bringComic(comic) {
     console.log(`llamamos a ${comic}`);
@@ -49,7 +68,7 @@ class CharacterController {
 
 }
 
-CharacterController.$inject = ['CharacterService'];
+CharacterController.$inject = ['CharacterService', '$scope'];
 
 export const characters = {
   templateUrl: 'app/characters/characters.html',
