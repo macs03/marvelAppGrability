@@ -25,12 +25,12 @@
             <h4>{{character.name}}</h4>
             <p>{{character.description}}
             </p>
-            <button type="button" class="btn btn-default">View More</button>
+            <button ng-show="character.comics.items.length > 0" ng-click="$ctrl.showComics($index);" type="button" class="btn btn-default">View More</button>
           </div>
         </div>
       </div>
 
-      <div class="related" ng-show="character.comics.items.length > 0">
+      <div class="related" ng-show="$ctrl.index == $index">
         <h4>Related comics</h4>
         <div class="row">
           <div class="comic-rel col-md-6 col-sm-6 col-xs-6 col-lg-6" ng-repeat="comic in character.comics.items">

@@ -43,6 +43,11 @@ class CharacterController {
       });
   }
 
+  showComics(index) {
+    console.log(index);
+    this.index = index;
+  }
+
 }
 
 CharacterController.$inject = ['CharacterService'];
