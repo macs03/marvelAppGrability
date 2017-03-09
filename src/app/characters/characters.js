@@ -33,6 +33,8 @@ class CharacterController {
           if (this.comicDetail.id === value.id) {
             console.log('existe en favs');
             this.flag = true;
+          } else {
+            this.flag = false;
           }
         });
       })

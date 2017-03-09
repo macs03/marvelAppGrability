@@ -5,14 +5,14 @@
     </figure>
     <span>My Favourites</span>
   </div>
-  <div class="body-fav">
+  <div class="body-fav" ng-repeat="comic in $ctrl.favorites">
     <div class="comic-box">
       <figure>
-        <img src="http://placehold.it/150x250" alt="">
+        <img ng-src="{{comic.thumbnail.path}}.jpg" alt="{{comic.title}}" width="150" height="250">
       </figure>
       <div class="description">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ratione
+          {{comic.description}}
         </p>
       </div>
       <figure class="trash">
