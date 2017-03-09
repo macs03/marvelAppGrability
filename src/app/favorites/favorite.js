@@ -19,7 +19,12 @@ class FavoriteController {
   }
 
   deleteFavorite(id) {
-    console.log('delete favorite');
+    console.log(id);
+    if (id > -1) {
+      this.favorites.splice(id, 1);
+    }
+    localStorage.setItem('favorites_marvel', JSON.stringify(this.favorites));
+    this.getFavorites();
   }
 
 }

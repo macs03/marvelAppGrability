@@ -15,7 +15,7 @@
           {{comic.description}}
         </p>
       </div>
-      <figure class="trash" ng-click="$ctrl.deleteFavorite(comic.id)">
+      <figure class="trash" ng-click="$ctrl.deleteFavorite($index)">
         <img src="../../assets/icons/btn-delete.png" alt="delete">
       </figure>
     </div>
