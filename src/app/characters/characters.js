@@ -24,6 +24,7 @@ class CharacterController {
     console.log(`llamamos a ${comic}`);
     const comicsFav = JSON.parse(localStorage.getItem('favorites_marvel'));
     console.log(comicsFav);
+    this.flag = false;
 
     this.CharacterService.getComic(comic)
       .then(data => {
@@ -33,8 +34,6 @@ class CharacterController {
           if (this.comicDetail.id === value.id) {
             console.log('existe en favs');
             this.flag = true;
-          } else {
-            this.flag = false;
           }
         });
       })

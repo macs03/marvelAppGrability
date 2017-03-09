@@ -18,8 +18,8 @@ class FavoriteController {
     console.log(this.favorites);
   }
 
-  deleteFavorite() {
-
+  deleteFavorite(id) {
+    console.log('delete favorite');
   }
 
 }
