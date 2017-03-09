@@ -17,7 +17,9 @@
         </div>
       </div>
       <div class="modal-footer row">
-        <button ng-click="$ctrl.addFav($ctrl.comic)" type="button" class="btn btn-default add-btn col-lg-6" data-dismiss="modal"><img src="../../assets/icons/btn-favourites-default.png" alt="">ADD TO FAVOURITES</button>
+        <button ng-show="!$ctrl.flag" ng-click="$ctrl.addFav($ctrl.comic)" type="button" class="btn btn-default add-btn col-lg-6"
+          data-dismiss="modal"><img src="../../assets/icons/btn-favourites-default.png" alt="">ADD TO FAVOURITES</button>
+        <button ng-show="$ctrl.flag" type="button" class="btn btn-default added-btn col-lg-6" data-dismiss="modal"><img src="../../assets/icons/btn-favourites-primary.png" alt="">ADDED TO FAVOURITES</button>
         <button type="button" class="btn btn-primary buy-btn col-lg-6" data-dismiss="modal"><img src="../../assets/icons/shopping-cart-primary.png" alt="">BUY FOR {{$ctrl.comic.prices[0].price | currency}}</button>
       </div>
     </div>

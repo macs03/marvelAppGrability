@@ -37,4 +37,20 @@
       margin-right: 1em;
     }
   }
+
+  .added-btn{
+    margin: 0 !important;
+    border-radius: 0 !important;
+    background: #261E1D !important;
+    border: #261E1D;
+    color: red;
+    font-weight: bold;
+    text-shadow: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+      margin-right: 1em;
+    }
+  }
 }

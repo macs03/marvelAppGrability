@@ -35,7 +35,7 @@
         <div class="row">
           <div class="comic-rel col-md-6 col-sm-6 col-xs-6 col-lg-6" ng-repeat="comic in character.comics.items">
             <span ng-click="$ctrl.bringComic(comic.resourceURI)" class="comic-rel-name" data-toggle="modal" data-target="#myModal">{{comic.name}}</span>
-            <default-modal comic="$ctrl.comicDetail"></default-modal>
+            <default-modal comic="$ctrl.comicDetail" flag="$ctrl.flag"></default-modal>
           </div>
         </div>
       </div>

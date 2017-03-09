@@ -1,9 +1,12 @@
+import angular from 'angular';
+
 class CharacterController {
   constructor(CharacterService) {
     this.CharacterService = CharacterService;
 
     this.getCharacters();
     this.page = 0;
+    this.flag = false;
   }
 
   getCharacters() {
@@ -19,10 +22,19 @@ class CharacterController {
 
   bringComic(comic) {
     console.log(`llamamos a ${comic}`);
+    const comicsFav = JSON.parse(localStorage.getItem('favorites_marvel'));
+    console.log(comicsFav);
+
     this.CharacterService.getComic(comic)
       .then(data => {
         console.log(data.data.data.results[0]);
         this.comicDetail = data.data.data.results[0];
+        angular.forEach(comicsFav, value => {
+          if (this.comicDetail.id === value.id) {
+            console.log('existe en favs');
+            this.flag = true;
+          }
+        });
       })
       .catch(err => {
         console.log(err);
