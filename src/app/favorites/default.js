@@ -1,9 +1,10 @@
 import angular from 'angular';
 
 class DefaultModalController {
-  constructor($rootScope) {
+  constructor($rootScope, toastr) {
     console.log('ready');
     this.$rootScope = $rootScope;
+    this.toastr = toastr;
   }
 
   addFav(comic) {
@@ -27,6 +28,7 @@ class DefaultModalController {
         console.log(favorites);
         localStorage.setItem('favorites_marvel', JSON.stringify(favorites));
         this.$rootScope.$broadcast('refreshEvent', true);
+        this.toastr.success('Comic saved like Favorite');
       }
     } else {
       console.log('se agrega de one');
@@ -34,12 +36,13 @@ class DefaultModalController {
       comicSave[0] = comic;
       localStorage.setItem('favorites_marvel', JSON.stringify(comicSave));
       this.$rootScope.$broadcast('refreshEvent', true);
+      this.toastr.success('Comic saved like Favorite');
     }
   }
 
 }
 
-DefaultModalController.$inject = ['$rootScope'];
+DefaultModalController.$inject = ['$rootScope', 'toastr'];
 
 export const defaultModal = {
   bindings: {

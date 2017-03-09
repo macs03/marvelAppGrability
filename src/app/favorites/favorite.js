@@ -1,7 +1,8 @@
 class FavoriteController {
-  constructor($rootScope, $scope) {
+  constructor($rootScope, $scope, toastr) {
     this.favorites = [];
     this.$rootScope = $rootScope;
+    this.toastr = toastr;
     this.getFavorites();
     const self = this;
     function changeView(ev, flag) {
@@ -22,6 +23,7 @@ class FavoriteController {
     console.log(id);
     if (id > -1) {
       this.favorites.splice(id, 1);
+      this.toastr.success('Comic Deleted');
     }
     localStorage.setItem('favorites_marvel', JSON.stringify(this.favorites));
     this.getFavorites();
@@ -29,7 +31,7 @@ class FavoriteController {
 
 }
 
-FavoriteController.$inject = ['$rootScope', '$scope'];
+FavoriteController.$inject = ['$rootScope', '$scope', 'toastr'];
 
 export const favorite = {
   controller: FavoriteController,
