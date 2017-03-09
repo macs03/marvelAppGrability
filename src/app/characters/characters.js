@@ -17,6 +17,18 @@ class CharacterController {
       });
   }
 
+  bringComic(comic) {
+    console.log(`llamamos a ${comic}`);
+    this.CharacterService.getComic(comic)
+      .then(data => {
+        console.log(data.data.data.results[0]);
+        this.comicDetail = data.data.data.results[0];
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
 }
 
 CharacterController.$inject = ['CharacterService'];

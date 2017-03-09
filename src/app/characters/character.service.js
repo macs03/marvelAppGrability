@@ -51,6 +51,28 @@ class CharacterService {
     return promise;
   }
 
+  getComic(comic) {
+    const defered = this.$q.defer();
+    const promise = defered.promise;
+
+    this.getConfig().then(config => {
+      this.$http({
+        method: 'GET',
+        url: `${comic}?${config.ts}&${config.user_key}&${config.hash_key}`
+      })
+        .then(
+        data => {
+          defered.resolve(data);
+        },
+        err => {
+          defered.reject(err);
+        }
+        );
+    });
+
+    return promise;
+  }
+
 }
 
 CharacterService.$inject = ['$http', '$q', '$window', '$rootScope'];
