@@ -1,12 +1,21 @@
 class FavoriteController {
-  constructor() {
+  constructor($rootScope, $scope) {
     this.favorites = [];
+    this.$rootScope = $rootScope;
     this.getFavorites();
+    const self = this;
+    function changeView(ev, flag) {
+      console.log(flag);
+      if (flag) {
+        self.getFavorites();
+      }
+    }
+    $scope.$on('refreshEvent', changeView);
   }
 
   getFavorites() {
     this.favorites = JSON.parse(localStorage.getItem('favorites_marvel'));
-    console.log(this.favorites)
+    console.log(this.favorites);
   }
 
   deleteFavorite() {
@@ -14,6 +23,8 @@ class FavoriteController {
   }
 
 }
+
+FavoriteController.$inject = ['$rootScope', '$scope'];
 
 export const favorite = {
   controller: FavoriteController,
