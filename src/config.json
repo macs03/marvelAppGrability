@@ -1,4 +1,7 @@
 {
-    "title": "Marvel App",
-    "api_url": "http://api.example.dev/"
+  "title": "Marvel App",
+  "api_url": "https://gateway.marvel.com:443/v1/public/",
+  "user_key": "apikey=37f8829150eb2afb1fe8810780c36111",
+  "ts": "ts=1",
+  "hash_key": "hash=9d9cacc5a47b48a182e505e16e15f1e5"
 }
