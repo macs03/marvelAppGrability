@@ -47,7 +47,8 @@ DefaultModalController.$inject = ['$rootScope', 'toastr'];
 export const defaultModal = {
   bindings: {
     comic: '<',
-    flag: '<'
+    flag: '<',
+    index: '<'
   },
   controller: DefaultModalController,
   templateUrl: 'app/favorites/default.html'
