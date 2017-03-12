@@ -14,10 +14,28 @@ class CharacterController {
       self.getCharactersByName(query);
     }
     $scope.$on('sendQuery', changeView);
+
+    function home(ev, flag) {
+      console.log(flag);
+      self.getCharacters();
+    }
+    $scope.$on('goHome', home);
   }
 
   getCharacters() {
     this.CharacterService.getCharacters(this.page)
+      .then(data => {
+        console.log(data.data.data.results);
+        this.characterData = data.data.data.results;
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
+  changePage(page) {
+    console.log(`cambiamos de pagina a ${page}`);
+    this.CharacterService.getCharacters(page)
       .then(data => {
         console.log(data.data.data.results);
         this.characterData = data.data.data.results;

@@ -8,6 +8,11 @@ class HeaderController {
     this.$rootScope.$broadcast('sendQuery', this.query);
   }
 
+  goHome() {
+    this.$rootScope.$broadcast('goHome', true);
+    this.query = "";
+  }
+
 }
 
 HeaderController.$inject = ['$rootScope'];
