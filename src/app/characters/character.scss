@@ -64,3 +64,12 @@
 .comic-rel-name{
   cursor: pointer;
 }
+
+.random-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  i{
+    cursor: pointer;
+  }
+}

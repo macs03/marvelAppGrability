@@ -31,10 +31,13 @@
       </div>
 
       <div class="related" ng-show="$ctrl.index == $index">
-        <h4>Related comics</h4>
+        <div class="random-box">
+          <h4>Related comics</h4>
+          <i ng-click="$ctrl.randomComics(character.comics.items)" class="fa fa-random" aria-hidden="true"></i>
+        </div>
         <div class="row">
           <div class="comic-rel col-md-6 col-sm-6 col-xs-6 col-lg-6" ng-repeat="comic in character.comics.items">
-            <span ng-click="$ctrl.bringComic(comic.resourceURI)" class="comic-rel-name" data-toggle="modal" data-target="#myModal-{{character.id}}">{{comic.name}}</span>
+            <span ng-click="$ctrl.bringComic(comic.resourceURI,false)" class="comic-rel-name" data-toggle="modal" data-target="#myModal-{{character.id}}">{{comic.name}}</span>
             <default-modal comic="$ctrl.comicDetail" index="character.id" flag="$ctrl.flag"></default-modal>
           </div>
         </div>
