@@ -75,12 +75,13 @@ class CharacterService {
   getComic(comic) {
     const defered = this.$q.defer();
     const promise = defered.promise;
+    const uri = comic.split(':');
 
     // this.getConfig().then(config => {
     this.$http({
       method: 'GET',
       // url: `${comic}?${config.ts}&${config.user_key}&${config.hash_key}`
-      url: `${comic}?ts=1&apikey=37f8829150eb2afb1fe8810780c36111&hash=9d9cacc5a47b48a182e505e16e15f1e5`
+      url: `https:${uri[1]}?ts=1&apikey=37f8829150eb2afb1fe8810780c36111&hash=9d9cacc5a47b48a182e505e16e15f1e5`
     })
       .then(
       data => {
