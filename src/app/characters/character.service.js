@@ -26,7 +26,6 @@ class CharacterService {
     return deferred.promise;
   }
 
-
   getCharacters(page) {
     const defered = this.$q.defer();
     const promise = defered.promise;
