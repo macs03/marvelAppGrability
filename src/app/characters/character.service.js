@@ -30,20 +30,21 @@ class CharacterService {
     const defered = this.$q.defer();
     const promise = defered.promise;
 
-    this.getConfig().then(config => {
-      this.$http({
-        method: 'GET',
-        url: `${config.api_url}characters?${config.ts}&${config.user_key}&${config.hash_key}&limit=10&offset=${page}`
-      })
-        .then(
-        data => {
-          defered.resolve(data);
-        },
-        err => {
-          defered.reject(err);
-        }
-        );
-    });
+    // this.getConfig().then(config => {
+    this.$http({
+      method: 'GET',
+      // url: `${config.api_url}characters?${config.ts}&${config.user_key}&${config.hash_key}&limit=10&offset=${page}`
+      url: `https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=37f8829150eb2afb1fe8810780c36111&hash=9d9cacc5a47b48a182e505e16e15f1e5&limit=10&offset=${page}`
+    })
+      .then(
+      data => {
+        defered.resolve(data);
+      },
+      err => {
+        defered.reject(err);
+      }
+      );
+    // });
 
     return promise;
   }
@@ -52,20 +53,21 @@ class CharacterService {
     const defered = this.$q.defer();
     const promise = defered.promise;
 
-    this.getConfig().then(config => {
-      this.$http({
-        method: 'GET',
-        url: `${config.api_url}characters?${config.ts}&${config.user_key}&${config.hash_key}&limit=10&offset=${page}&nameStartsWith=${query}`
-      })
-        .then(
-        data => {
-          defered.resolve(data);
-        },
-        err => {
-          defered.reject(err);
-        }
-        );
-    });
+    // this.getConfig().then(config => {
+    this.$http({
+      method: 'GET',
+      // url: `${config.api_url}characters?${config.ts}&${config.user_key}&${config.hash_key}&limit=10&offset=${page}&nameStartsWith=${query}`
+      url: `https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=37f8829150eb2afb1fe8810780c36111&hash=9d9cacc5a47b48a182e505e16e15f1e5&limit=10&offset=${page}&nameStartsWith=${query}`
+    })
+      .then(
+      data => {
+        defered.resolve(data);
+      },
+      err => {
+        defered.reject(err);
+      }
+      );
+    // });
 
     return promise;
   }
@@ -74,20 +76,21 @@ class CharacterService {
     const defered = this.$q.defer();
     const promise = defered.promise;
 
-    this.getConfig().then(config => {
-      this.$http({
-        method: 'GET',
-        url: `${comic}?${config.ts}&${config.user_key}&${config.hash_key}`
-      })
-        .then(
-        data => {
-          defered.resolve(data);
-        },
-        err => {
-          defered.reject(err);
-        }
-        );
-    });
+    // this.getConfig().then(config => {
+    this.$http({
+      method: 'GET',
+      // url: `${comic}?${config.ts}&${config.user_key}&${config.hash_key}`
+      url: `${comic}?ts=1&apikey=37f8829150eb2afb1fe8810780c36111&hash=9d9cacc5a47b48a182e505e16e15f1e5`
+    })
+      .then(
+      data => {
+        defered.resolve(data);
+      },
+      err => {
+        defered.reject(err);
+      }
+      );
+    // });
 
     return promise;
   }
