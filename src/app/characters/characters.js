@@ -56,7 +56,6 @@ class CharacterController {
       });
   }
 
-
   bringComic(comic, random) {
     console.log(`llamamos a ${comic} ${random}`);
     const comicsFav = JSON.parse(localStorage.getItem('favorites_marvel'));
