@@ -20,13 +20,11 @@
   }
 }
 .body-characters{
-  display: flex;
-  justify-content: center;
   margin-top: 1em;
 }
 .character{
   background: white;
-  margin: 1em;
+  margin: 1em 1em 1em 5%;
   padding: .5em;
   .aux-box {
     position: relative;
