@@ -14,8 +14,8 @@
       </select>
     </div>
   </div>
-  <div class="body-characters" ng-repeat="character in $ctrl.characterData" ng-init="outerIndex = $index">
-    <div class="character col-md-5 col-sm-5 col-xs-5 col-lg-5">
+  <div class="body-characters row">
+    <div class="character col-md-5 col-sm-5 col-xs-5 col-lg-5" ng-repeat="character in $ctrl.characterData" ng-init="outerIndex = $index">
       <div class="aux-box">
         <div class="bx-1">
           <figure>
